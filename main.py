@@ -1,7 +1,7 @@
 import pygame
 import math
 from model_classes import Planet
-from constants import WIDTH, HEIGHT, WHITE, YELLOW
+from constants import WIDTH, HEIGHT, WHITE, YELLOW, BLUE, RED, DARK_GREY
 pygame.init()
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -16,7 +16,15 @@ def main():
     sun = Planet(0, 0, 30, YELLOW, 1.989*10e30)
     sun.sun = True
 
-    planets = [sun]
+    earth = Planet(-1*Planet.AU, 0, 16, BLUE, 5.9742*10e24)
+
+    mars = Planet(-1.524*Planet.AU, 0, 12, RED, 6.39*10e23)
+
+    mercury = Planet(0.37*Planet.AU, 0, 8, DARK_GREY, 0.33010e24)
+
+    venus = Planet(0.723*Planet.AU, 0, 14, WHITE, 4.8685*10e24)
+
+    planets = [sun, earth, mars, mercury, venus]
 
     while run:
         clock.tick(60) #60 is fps
