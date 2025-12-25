@@ -33,9 +33,10 @@ def main():
         # we only care about the user clicking the x
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                run= False
+                run = False
 
         for planet in planets:
+            planet.update_position(planets)
             planet.draw(WIN)
 
         pygame.display.update()
